@@ -1,0 +1,58 @@
+#Execute this file and configs in dotfiles will create their softlinks under the /home
+#Please remind that it will override your setting before
+while true
+do
+    read -r -p "Do You Want To Continue? [Y/n] " input
+ 
+    case $input in
+        [yY])
+            break
+            ;;
+ 
+        [nN]) 
+            exit 1               
+            ;;
+ 
+        *)
+            echo "Invalid input,please try again"
+            ;;
+    esac
+done
+
+#Create a softlink of bashrc in dotfiles.
+if [ -f ~/dotfiles/.bashrc ]; then
+    ln -si ~/dotfiles/.bashrc ~/.bashrc
+fi
+
+
+#Create a softlink of bash_profile in dotfiles.
+if [ -f ~/dotfiles/.bash_profile ]; then
+    ln -si ~/dotfiles/.bash_profile ~/.bash_profile
+fi
+
+
+#Create a softlink of gitconfig in dotfiles.
+if [ -f ~/dotfiles/.gitconfig ]; then
+    ln -si ~/dotfiles/.gitconfig ~/.gitconfig
+fi
+
+
+#Create a softlink of vimrc in dotfiles.
+if [ -f ~/dotfiles/.vimrc ]; then
+    ln -si ~/dotfiles/.vimrc ~/.vimrc
+fi
+
+
+#Create a softlink of sshconfig in dotfiles.
+if [ -f ~/dotfiles/.ssh/config ]; then
+    ln -si ~/dotfiles/.ssh/config ~/.ssh/config
+fi
+
+
+#Create a softlink of .bash_profile in dotfiles.
+if [ -f ~/dotfiles/.tmux.conf ]; then
+    ln -si ~/dotfiles/.tmux.conf ~/.tmux.conf 
+fi
+
+
+#Create a softlink of .bash_profile in dotfiles.
